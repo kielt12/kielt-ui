@@ -84,6 +84,12 @@ export default {
         count: 0,
         clicked: false,
       },
+      {
+        id:2,
+        name : "Animation",
+        count: 0,
+        clicked:false
+      }
     ]);
 
     const iconSelector = (icon) => {
