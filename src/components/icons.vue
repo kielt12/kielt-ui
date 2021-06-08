@@ -85,7 +85,10 @@
       d="M8 22L9.23077 20H11.6923M11.6923 20L10.4615 22M11.6923 20H14.1538M14.1538 20L12.9231 22M14.1538 20H16.6154M16.6154 20L15.3846 22M16.6154 20H19.0769M19.0769 20L17.8462 22M19.0769 20H21.5385L20.3077 22H22.7692L24 20"
       :stroke="clicked ? '#76A9FF' : 'black'"
     />
-    <path d="M6 20H7.1875H23.2188H25V22H7.78125H7.1875H6V20Z" :stroke="clicked ? '#76A9FF' : 'black'" />
+    <path
+      d="M6 20H7.1875H23.2188H25V22H7.78125H7.1875H6V20Z"
+      :stroke="clicked ? '#76A9FF' : 'black'"
+    />
     <path d="M6 7L7 5" :stroke="clicked ? '#76A9FF' : 'black'" />
     <path d="M6 22L7 20" :stroke="clicked ? '#76A9FF' : 'black'" />
   </svg>

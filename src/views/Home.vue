@@ -56,10 +56,10 @@
 <script>
 import { computed, reactive, ref } from "vue";
 import Icons from "../components/icons";
-import Carousels from "../components/Ui/Carousels.vue"
-import Welcome from "../components/Welcome.vue"
+import Carousels from "../components/Ui/Carousels.vue";
+import Welcome from "../components/Welcome.vue";
 import Cards from "@/components/Ui/Card.vue";
-import Animation from "@/components/Ui/Animation.vue"
+import Animation from "@/components/Ui/Animation.vue";
 export default {
   name: "Home",
   components: {
@@ -67,7 +67,7 @@ export default {
     Cards,
     Carousels,
     Welcome,
-    Animation
+    Animation,
   },
   setup() {
     const selected = ref("Welcome");
@@ -87,11 +87,11 @@ export default {
         clicked: false,
       },
       {
-        id:2,
-        name : "Animation",
-        count: 0,
-        clicked:false
-      }
+        id: 2,
+        name: "Animation",
+        count: 1,
+        clicked: false,
+      },
     ]);
 
     const iconSelector = (icon) => {
@@ -103,10 +103,9 @@ export default {
           lastClicked.value = icon.id;
         }
       } else {
-        selected.value = "Welcome"
+        selected.value = "Welcome";
         icons[lastClicked.value].clicked = false;
       }
-       
     };
     return {
       search,
