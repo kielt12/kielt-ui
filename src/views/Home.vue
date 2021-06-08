@@ -59,13 +59,15 @@ import Icons from "../components/icons";
 import Carousels from "../components/Ui/Carousels.vue"
 import Welcome from "../components/Welcome.vue"
 import Cards from "@/components/Ui/Card.vue";
+import Animation from "@/components/Ui/Animation.vue"
 export default {
   name: "Home",
   components: {
     Icons,
     Cards,
     Carousels,
-    Welcome
+    Welcome,
+    Animation
   },
   setup() {
     const selected = ref("Welcome");
