@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <!-- <div class="header">
     <h1>Array Sort</h1>
   </div>
   <div id="list-complete-demo" class="demo">
@@ -12,10 +12,16 @@
         {{ item }}
       </span>
     </transition-group>
-  </div>
-  <div>
-    
-  </div>
+  </div> -->
+<div>
+    <div id="loading-wrapper" >
+        
+        <div id="loading-content"></div>
+      </div>
+     
+</div>
+      
+
 </template>
 
 <script>
@@ -68,6 +74,38 @@ export default {
     font-weight: 300;
     font-size: 28px;
     line-height: 36px;
+  }
+
+}
+
+
+
+#loading-wrapper{
+    position: fixed;
+    width: 100%;
+  height: 400px;
+}
+
+
+#loading-content {
+      width: 100px;
+  height: 100px;
+  border: 3px solid transparent;
+  border-top-color: rgb(121, 61, 185);
+  border-bottom-color: rgb(121, 61, 185);
+  
+  animation: loader 2s linear  infinite;
+}
+
+@keyframes loader {
+  0% {
+ transform: rotate(20deg);
+ 
+  }
+
+  100% {
+    transform: rotate(200deg);
+    transform: translate(-50%,50%)
   }
 }
 </style>
