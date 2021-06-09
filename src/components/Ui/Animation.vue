@@ -1,5 +1,5 @@
 <template>
-  <!-- <div class="header">
+  <div class="header">
     <h1>Array Sort</h1>
   </div>
   <div id="list-complete-demo" class="demo">
@@ -12,16 +12,21 @@
         {{ item }}
       </span>
     </transition-group>
-  </div> -->
-<div>
-    <div id="loading-wrapper" >
-        
-        <div id="loading-content"></div>
-      </div>
-     
-</div>
-      
+  </div>
+  <div class="header">
+    <h1>Square Keyframes</h1>
+    <div id="square-wrapper">
+      <div id="square-content"></div>
+    </div>
+  </div>
+  <div class="header">
+    <h1>loading Spinner Keyframes</h1>
+    <div id="loading-wrapper">
+      <div id ="loading">
 
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -67,45 +72,133 @@ export default {
   position: absolute;
 }
 
-.header{
-  h1{
+.header {
+  h1 {
     font-family: Montserrat;
     font-style: normal;
     font-weight: 300;
     font-size: 28px;
     line-height: 36px;
   }
-
 }
 
+#square-wrapper {
+  position: relative;
+  left: 45%;
+  height: 200px;
+}
 
+#square-content {
+  background-color: black;
+  width: 100px;
+  height: 100px;
+
+  animation: square 2s linear infinite;
+}
+
+@keyframes square {
+  0% {
+    background-color: black;
+  }
+
+  25% {
+    transform: translateY(100%);
+  }
+
+  50% {
+    border-radius: 12px;
+    background-color: rgb(77, 24, 199);
+    transform: translate(100%, 100%);
+    //transform: translate(-50%,50%)
+  }
+
+  75% {
+    border-radius: 50%;
+    transform: translate(100%, 0);
+  }
+}
 
 #loading-wrapper{
-    position: fixed;
-    width: 100%;
-  height: 400px;
+
 }
 
-
-#loading-content {
-      width: 100px;
+#loading-content{
+  background-color: blue;
+  width: 100px;
   height: 100px;
-  border: 3px solid transparent;
-  border-top-color: rgb(121, 61, 185);
-  border-bottom-color: rgb(121, 61, 185);
+  animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+  0%{
+    transform: rotate(0);
+  }
+
+  100%{
+    transform: rotate(360deg);
+  }
   
-  animation: loader 2s linear  infinite;
+}
+#loading,
+#loading:before,
+#loading:after {
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation: loading 1.8s infinite ease-in-out;
+  animation: loading 1.8s infinite ease-in-out;
+}
+#loading {
+  color: #0c5a9b;
+  font-size: 10px;
+  margin: 80px auto;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
 }
 
-@keyframes loader {
-  0% {
- transform: rotate(20deg);
- 
-  }
+#loading:before,
+#loading:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
 
+#loading:before {
+  left: -3.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+#loading:after {
+  left: 3.5em;
+}
+
+@-webkit-keyframes loading {
+  0%,
+  80%,
   100% {
-    transform: rotate(200deg);
-    transform: translate(-50%,50%)
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
   }
 }
+@keyframes loading {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
+  }
+}
+
 </style>
